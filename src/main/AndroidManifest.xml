@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.gemini.set_assistant"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="3" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
+                     xmlns:tools="http://schemas.android.com/tools"
+                     tools:ignore="ProtectedPermissions" />
+    <application android:icon="@drawable/blank">
+        <activity android:name=".SetAssistantActivity"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:label="Set Assistant"
+            android:noHistory="true"
+            android:excludeFromRecents="true"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".SetAssistantActivity" />
+                <action android:name="android.intent.action.MAIN" /> 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name=".SetAssistantActivity" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="set-assistant"
+                      android:host="org.gemini.set-assistant"
+                      android:pathPattern=".*" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
